@@ -1,0 +1,91 @@
+using Lab_07_Student_API.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Lab_07_Student_API.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class StudentsController : ControllerBase
+    {
+        private static List<Student> students = new List<Student>()
+        {
+            new Student{Id=1,Name="Bhavik",Age=20,City="Rajkot"},
+            new Student{Id=2,Name="Rahul",Age=21,City="Ahmedabad"},
+            new Student{Id=3,Name="Yash",Age=19,City="Surat"},
+            new Student{Id=4,Name="Amit",Age=22,City="Vadodara"},
+            new Student{Id=5,Name="Man",Age=20,City="Junagadh"}
+        };
+
+        [HttpGet]
+        public IActionResult GetStudents()
+        {
+            return Ok(students);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetStudent(int id)
+        {
+            var student = students.FirstOrDefault(x => x.Id == id);
+
+            if (student == null)
+                return NotFound("Student Not Found");
+
+            return Ok(student);
+        }
+
+        [HttpPost]
+        public IActionResult AddStudent(Student student)
+        {
+            if (student == null)
+                return BadRequest("Invalid Student Data");
+
+            if (student.Id <= 0)
+            {
+                student.Id = students.Any() ? students.Max(x => x.Id) + 1 : 1;
+            }
+            else if (students.Any(x => x.Id == student.Id))
+            {
+                return Conflict("Student with this ID already exists");
+            }
+
+            students.Add(student);
+
+            return CreatedAtAction(
+                nameof(GetStudent),
+                new { id = student.Id },
+                student
+            );
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateStudent(int id, Student updatedStudent)
+        {
+            if (updatedStudent == null)
+                return BadRequest("Invalid Student Data");
+
+            var student = students.FirstOrDefault(x => x.Id == id);
+
+            if (student == null)
+                return NotFound("Student Not Found");
+
+            student.Name = updatedStudent.Name;
+            student.Age = updatedStudent.Age;
+            student.City = updatedStudent.City;
+
+            return Ok("Student Updated Successfully");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteStudent(int id)
+        {
+            var student = students.FirstOrDefault(x => x.Id == id);
+
+            if (student == null)
+                return NotFound("Student Not Found");
+
+            students.Remove(student);
+
+            return Ok("Student Deleted Successfully");
+        }
+    }
+}
