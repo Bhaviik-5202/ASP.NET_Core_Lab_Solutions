@@ -1,0 +1,53 @@
+@HostAddress = http://localhost:5199
+
+### 1. Lab 15: Common API Response - Get All Students
+GET {{HostAddress}}/api/Students
+Accept: application/json
+
+###
+
+### 2. Lab 16: Route Constraint - Int & Range (id: 1..100)
+GET {{HostAddress}}/api/Students/1
+Accept: application/json
+
+###
+
+### 3. Lab 16: Route Constraint - Alpha (category: e.g. "engineering")
+GET {{HostAddress}}/api/Students/category/engineering
+Accept: application/json
+
+###
+
+### 4. Lab 16: Route Constraint - Regex (code: 3 uppercase + 3 digits, e.g. "CSE101")
+GET {{HostAddress}}/api/Students/code/CSE101
+Accept: application/json
+
+###
+
+### 5. Lab 17: Model Binding - [FromQuery] (Filter parameters)
+GET {{HostAddress}}/api/Students/filter?department=Computer&minAge=18&pageNumber=1&pageSize=5
+Accept: application/json
+
+###
+
+### 6. Lab 17: Model Binding - [FromBody] (Create student via JSON payload)
+POST {{HostAddress}}/api/Students
+Content-Type: application/json
+
+{
+  "name": "Bhavik Parmar",
+  "email": "bhavik@college.edu",
+  "age": 21,
+  "department": "Computer Engineering",
+  "studentCode": "CSE121"
+}
+
+###
+
+### 7. Lab 17: Model Binding - [FromHeader]
+GET {{HostAddress}}/api/Students/header-info
+X-Client-App: CollegeDemoClient
+X-Request-Id: REQ-COLLEGE-999
+Accept: application/json
+
+###
