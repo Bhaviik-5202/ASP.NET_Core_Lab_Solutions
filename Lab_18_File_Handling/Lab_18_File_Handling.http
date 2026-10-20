@@ -1,0 +1,46 @@
+@HostAddress = http://localhost:5220
+
+### 1. Get All Users
+GET {{HostAddress}}/api/User
+Accept: application/json
+
+###
+
+### 2. Get User By ID
+GET {{HostAddress}}/api/User/1
+Accept: application/json
+
+###
+
+### 3. Create User with Document File (multipart/form-data)
+POST {{HostAddress}}/api/User
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="UserName"
+
+BhavikParmar
+--WebAppBoundary
+Content-Disposition: form-data; name="Password"
+
+Password@123
+--WebAppBoundary
+Content-Disposition: form-data; name="DocumentFile"; filename="sample.png"
+Content-Type: image/png
+
+<binary-data-placeholder>
+--WebAppBoundary--
+
+###
+
+### 4. Delete User Document Only (deleteFileOnly = true)
+DELETE {{HostAddress}}/api/User/1?deleteFileOnly=true
+Accept: application/json
+
+###
+
+### 5. Delete User and Document Completely
+DELETE {{HostAddress}}/api/User/1?deleteFileOnly=false
+Accept: application/json
+
+###
