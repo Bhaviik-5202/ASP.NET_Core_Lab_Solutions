@@ -1,0 +1,39 @@
+@HostAddress = http://localhost:5192
+
+### 1. URL Path Versioning - V1 Students
+GET {{HostAddress}}/api/v1/Students/GetAll
+Accept: application/json
+
+###
+
+### 2. URL Path Versioning - V2 Students (Enhanced with structured Name & Department)
+GET {{HostAddress}}/api/v2/Students/GetAll
+Accept: application/json
+
+###
+
+### 3. Query String Versioning - V1 Products (?api-version=1.0)
+GET {{HostAddress}}/api/products?api-version=1.0
+Accept: application/json
+
+###
+
+### 4. Query String Versioning - V2 Products (?api-version=2.0 with Discount Calculation)
+GET {{HostAddress}}/api/products?api-version=2.0
+Accept: application/json
+
+###
+
+### 5. Header Versioning - V1 Users (X-API-Version: 1.0)
+GET {{HostAddress}}/api/users
+X-API-Version: 1.0
+Accept: application/json
+
+###
+
+### 6. Header Versioning - V2 Users (X-API-Version: 2.0 with FullName)
+GET {{HostAddress}}/api/users
+X-API-Version: 2.0
+Accept: application/json
+
+###
