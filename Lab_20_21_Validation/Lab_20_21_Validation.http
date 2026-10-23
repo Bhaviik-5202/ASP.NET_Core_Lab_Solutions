@@ -1,0 +1,76 @@
+@HostAddress = http://localhost:5083
+@HttpsAddress = https://localhost:7237
+
+### 1. Lab 20: Basic Validation - Valid Student (Passes All Rules)
+POST {{HostAddress}}/api/Students/basic
+Content-Type: application/json
+
+{
+  "name": "Bhavik Parmar",
+  "enrollmentNumber": "21010101001",
+  "departmentId": 1
+}
+
+###
+
+### 2. Lab 20: Basic Validation - Invalid Student (Fails NotEmpty, Length, DepartmentId)
+POST {{HostAddress}}/api/Students/basic
+Content-Type: application/json
+
+{
+  "name": "",
+  "enrollmentNumber": "123",
+  "departmentId": 0
+}
+
+###
+
+### 3. Lab 21: Advanced Validation - Valid Student (Enum, Range, Nested Courses & Hosteller)
+POST {{HostAddress}}/api/Students/advanced
+Content-Type: application/json
+
+{
+  "studentName": "Bhavik Parmar",
+  "enrollmentNo": "21010101001",
+  "age": 21,
+  "gender": 1,
+  "departmentId": 1,
+  "semester": 5,
+  "isHosteller": true,
+  "hostelName": "Block-A",
+  "fees": 45000,
+  "courses": [
+    {
+      "courseId": 101,
+      "courseName": ".NET Core",
+      "credits": 4
+    }
+  ]
+}
+
+###
+
+### 4. Lab 21: Advanced Validation - Invalid (Hostel resident missing HostelName triggers conditional rule)
+POST {{HostAddress}}/api/Students/advanced
+Content-Type: application/json
+
+{
+  "studentName": "Bhavik Parmar",
+  "enrollmentNo": "21010101001",
+  "age": 21,
+  "gender": 1,
+  "departmentId": 1,
+  "semester": 5,
+  "isHosteller": true,
+  "hostelName": "",
+  "fees": 45000,
+  "courses": [
+    {
+      "courseId": 101,
+      "courseName": ".NET Core",
+      "credits": 4
+    }
+  ]
+}
+
+###
