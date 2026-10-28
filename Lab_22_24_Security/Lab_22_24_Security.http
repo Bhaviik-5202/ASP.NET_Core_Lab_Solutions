@@ -1,0 +1,63 @@
+@HostAddress = http://localhost:5162
+@HttpsAddress = https://localhost:7060
+
+### 1. Lab 22: Login as Admin (Returns Access Token + Refresh Token)
+POST {{HostAddress}}/api/Auth/login
+Content-Type: application/json
+
+{
+  "userName": "admin",
+  "password": "Admin@123"
+}
+
+###
+
+### 2. Lab 22: Login as Student (Role: Student)
+POST {{HostAddress}}/api/Auth/login
+Content-Type: application/json
+
+{
+  "userName": "student",
+  "password": "Student@123"
+}
+
+###
+
+### 3. Lab 22: Access Protected Profile (Requires Bearer Token)
+GET {{HostAddress}}/api/Auth/profile
+Authorization: Bearer <paste_token_here>
+Accept: application/json
+
+###
+
+### 4. Lab 24: Role-Based Authorization - Admin Only (Returns 403 Forbidden for Student)
+GET {{HostAddress}}/api/Auth/admin-only
+Authorization: Bearer <paste_token_here>
+Accept: application/json
+
+###
+
+### 5. Lab 24: Role-Based Authorization - Academic Area (Allows Faculty & Student)
+GET {{HostAddress}}/api/Auth/faculty-student
+Authorization: Bearer <paste_token_here>
+Accept: application/json
+
+###
+
+### 6. Lab 23: Refresh Token Rotation (Issues new Access Token & new Refresh Token)
+POST {{HostAddress}}/api/Auth/refresh
+Content-Type: application/json
+
+{
+  "accessToken": "<paste_access_token_here>",
+  "refreshToken": "<paste_refresh_token_here>"
+}
+
+###
+
+### 7. Lab 23: Revoke / Logout (Invalidates Refresh Token)
+POST {{HostAddress}}/api/Auth/logout
+Authorization: Bearer <paste_token_here>
+Accept: application/json
+
+###
