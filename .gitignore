@@ -130,7 +130,15 @@ BenchmarkDotNet.Artifacts/
 *.pfx
 *.p12
 *.key
+*.pem
+*.crt
+*.cer
+*.der
 secrets.json
+.env
+.env.*
+!.env.example
+!.env.template
 
 # --------------------------------------------------
 # User Secrets & Local Appsettings Overrides
@@ -138,6 +146,8 @@ secrets.json
 appsettings*.local.json
 appsettings.local.json
 appsettings.Development.local.json
+appsettings.Production.local.json
+appsettings.secrets.json
 
 # --------------------------------------------------
 # Application Runtime Uploads (Lab 18 & Future Labs)
