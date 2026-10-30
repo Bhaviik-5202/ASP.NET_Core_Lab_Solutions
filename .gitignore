@@ -49,7 +49,7 @@ UpgradeLog.htm
 UpgradeReport.sarif
 
 # --------------------------------------------------
-# Visual Studio Code
+# Visual Studio Code & Modern Editors
 # --------------------------------------------------
 .vscode/*
 !.vscode/settings.json
@@ -59,6 +59,8 @@ UpgradeReport.sarif
 *.code-workspace
 .history/
 .ionide/
+.fleet/
+.cursor/
 
 # --------------------------------------------------
 # JetBrains Rider / ReSharper
@@ -123,6 +125,10 @@ BenchmarkDotNet.Artifacts/
 *.db
 *.db-shm
 *.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
 
 # --------------------------------------------------
 # Security, Certificates & Secrets

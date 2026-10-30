@@ -1,0 +1,67 @@
+@Lab_25_26_Architecture_HostAddress = http://localhost:5281
+@HttpsAddress = https://localhost:7021
+
+### 1. Get All Users (Via Service -> Repository)
+GET {{Lab_25_26_Architecture_HostAddress}}/api/User/GetAll
+Accept: application/json
+
+###
+
+### 2. Get User By ID (Via Service -> Repository)
+GET {{Lab_25_26_Architecture_HostAddress}}/api/User/GetById/1
+Accept: application/json
+
+###
+
+### 3. Add User (College Practical Requirement: Controller -> Validator -> Service -> Repository)
+POST {{Lab_25_26_Architecture_HostAddress}}/api/User/Add
+Content-Type: application/json
+
+{
+  "userTypeID": 3,
+  "fullName": "Student Demo",
+  "userCode": "STD999",
+  "email": "student999@college.edu",
+  "password": "Password@123",
+  "mobileNumber": "9876543210",
+  "profilePicturePath": "/Files/Users/std999.png"
+}
+
+###
+
+### 4. Add User with Validation Failure (Triggers FluentValidation in Controller)
+POST {{Lab_25_26_Architecture_HostAddress}}/api/User/Add
+Content-Type: application/json
+
+{
+  "userTypeID": 99,
+  "fullName": "",
+  "userCode": "STD999",
+  "email": "invalid-email",
+  "password": "123",
+  "mobileNumber": "123"
+}
+
+###
+
+### 5. Update User (Via Service -> Repository)
+PUT {{Lab_25_26_Architecture_HostAddress}}/api/User/Update/1
+Content-Type: application/json
+
+{
+  "userTypeID": 1,
+  "fullName": "Madhuresh Shah (Updated)",
+  "userCode": "ADM001",
+  "email": "admin.updated@college.edu",
+  "password": "Password@123",
+  "mobileNumber": "9876543210",
+  "profilePicturePath": "/Files/Users/admin.png"
+}
+
+###
+
+### 6. Delete User (Soft Delete via Service -> Repository)
+DELETE {{Lab_25_26_Architecture_HostAddress}}/api/User/Delete/2
+Accept: application/json
+
+###
