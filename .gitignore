@@ -49,7 +49,7 @@ UpgradeLog.htm
 UpgradeReport.sarif
 
 # --------------------------------------------------
-# Visual Studio Code & Modern Editors
+# Visual Studio Code & Modern Editors / AI Agents
 # --------------------------------------------------
 .vscode/*
 !.vscode/settings.json
@@ -61,6 +61,8 @@ UpgradeReport.sarif
 .ionide/
 .fleet/
 .cursor/
+.gemini/
+.claude/
 
 # --------------------------------------------------
 # JetBrains Rider / ReSharper
@@ -81,6 +83,9 @@ http-client.private.env.json
 # --------------------------------------------------
 # NuGet & Package Caches
 # --------------------------------------------------
+*.nupkg
+*.snupkg
+**/packages/
 *.nuget.props
 *.nuget.targets
 project.lock.json
@@ -102,11 +107,13 @@ pnpm-debug.log*
 # --------------------------------------------------
 [Tt]est[Rr]esults/
 [Tt]est[Rr]esult*/
+coverage/
 *.trx
 coverage*.json
 coverage*.xml
 *.coverage
 *.coveragexml
+*.opencover.xml
 
 # --------------------------------------------------
 # Memory Dumps & Diagnostics
