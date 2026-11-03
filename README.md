@@ -1,44 +1,52 @@
-# Building RESTful APIs With ASP.NET Core (.NET 10)
+<div align="center">
+
+# 🚀 Building RESTful APIs With ASP.NET Core (.NET 10)
 
 [![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-13.0%20%2F%2014.0-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-Web%20API-512BD4?style=for-the-badge&logo=aspnetcore&logoColor=white)](https://learn.microsoft.com/en-us/aspnet/core/)
 [![Entity Framework Core](https://img.shields.io/badge/EF%20Core-10.0-blue?style=for-the-badge&logo=nuget&logoColor=white)](https://learn.microsoft.com/en-us/ef/core/)
 [![Scalar](https://img.shields.io/badge/API%20Docs-Scalar-black?style=for-the-badge&logo=openapiinitiative&logoColor=white)](https://scalar.com/)
-[![Build Status](https://img.shields.io/badge/Build-Passing%20(0%20Warn%2C%200%20Err)-brightgreen?style=for-the-badge)](https://github.com/Bhaviik-5202/Building-RESTful-APIs-With-ASP.NET-Core)
+[![Build Status](https://img.shields.io/badge/Build-Passing%20%7C%200%20Errors-brightgreen?style=for-the-badge)](https://github.com/Bhaviik-5202/Building-RESTful-APIs-With-ASP.NET-Core)
 
-A comprehensive, industry-aligned university lab curriculum covering **Lab 01 to Lab 26** for building high-performance, secure, and maintainable RESTful Web APIs using **ASP.NET Core on .NET 10**.
+<p align="center">
+  A comprehensive, industry-aligned university lab curriculum covering <strong>Lab 01 to Lab 26</strong> for building high-performance, secure, and maintainable RESTful Web APIs using <strong>ASP.NET Core on .NET 10</strong>.
+</p>
+
+</div>
+
+---
 
 The repository progresses from C# object-oriented engineering fundamentals and Language Integrated Query (LINQ) to production-grade Web API patterns: Entity Framework Core Code-First migrations, automated model validation, unified API envelopes, resilient file streaming, API versioning, JWT authentication with refresh token rotation, and Clean Architecture using the Repository & Unit of Work patterns.
 
 ---
 
-## Table of Contents
+## 📑 Table of Contents
 
-- [Curriculum Architecture & Roadmap](#curriculum-architecture--roadmap)
-- [Lab Directory & Practical Index](#lab-directory--practical-index)
-- [Module Highlights](#module-highlights)
-  - [1. C# & Object-Oriented Engineering (Labs 01–06)](#1-c-object-oriented-engineering-labs-0106)
+- [Curriculum Architecture & Roadmap](#-curriculum-architecture--roadmap)
+- [Lab Directory & Practical Index](#-lab-directory--practical-index)
+- [Module Highlights](#-module-highlights)
+  - [1. C# & Object-Oriented Engineering (Labs 01–06)](#1-c--object-oriented-engineering-labs-0106)
   - [2. RESTful API Foundations & EF Core (Labs 07–10)](#2-restful-api-foundations--ef-core-labs-0710)
   - [3. Language Integrated Query - LINQ (Lab 11: Parts 1–3)](#3-language-integrated-query---linq-lab-11-parts-13)
   - [4. Advanced Web API Engineering (Labs 15–21)](#4-advanced-web-api-engineering-labs-1521)
   - [5. Enterprise Security & Architecture (Labs 22–26)](#5-enterprise-security--architecture-labs-2226)
-- [Cross-Cutting Patterns](#cross-cutting-patterns)
+- [Cross-Cutting Patterns](#-cross-cutting-patterns)
   - [Standardized API Response Envelope (`ApiResponse<T>`)](#standardized-api-response-envelope-apiresponset)
   - [Clean Architecture & Generic Repository Pattern](#clean-architecture--generic-repository-pattern)
   - [JWT Authentication & Refresh Token Rotation Flow](#jwt-authentication--refresh-token-rotation-flow)
-- [Technology Stack](#technology-stack)
-- [Getting Started](#getting-started)
+- [Technology Stack](#-technology-stack)
+- [Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
   - [Clone & Build](#clone--build)
   - [Running an API Project](#running-an-api-project)
   - [Interactive API Documentation (Scalar)](#interactive-api-documentation-scalar)
-- [Build Quality & Verification](#build-quality--verification)
-- [Author & Acknowledgments](#author--acknowledgments)
+- [Build Quality & Verification](#-build-quality--verification)
+- [Author & Acknowledgments](#-author--acknowledgments)
 
 ---
 
-## Curriculum Architecture & Roadmap
+## 🗺️ Curriculum Architecture & Roadmap
 
 ```mermaid
 flowchart TD
@@ -54,69 +62,77 @@ flowchart TD
 
     subgraph Phase2["Phase 2: RESTful APIs & Data Access"]
         L07["Lab 07: First Web API & Controllers"]
-        L08["Lab 08: HTTP Status Codes & REST Conventions"]
+        L08["Lab 08: HTTP Status Codes & Conventions"]
         L09["Lab 09: EF Core 10 Code-First & Migrations"]
-        L10["Lab 10: Relational CRUD & Dashboard Analytics"]
-        L06 --> L07 --> L08 --> L09 --> L10
+        L10["Lab 10: Relational CRUD & Analytics"]
+        L07 --> L08 --> L09 --> L10
     end
 
     subgraph Phase3["Phase 3: Deep-Dive LINQ Engine"]
         L11_1["Lab 11 Part 1: Projections, Filters & Paging"]
         L11_2["Lab 11 Part 2: Grouping & Aggregations"]
-        L11_3["Lab 11 Part 3: Relational Joins & Set Operations"]
-        L10 --> L11_1 --> L11_2 --> L11_3
+        L11_3["Lab 11 Part 3: Relational Joins & Set Ops"]
+        L11_1 --> L11_2 --> L11_3
     end
 
     subgraph Phase4["Phase 4: Advanced Web API Engineering"]
-        L15_17["Lab 15–17: Unified Response, Binding & Middleware"]
-        L18["Lab 18: Resilient Multi-File Upload & Streaming"]
+        L15_17["Lab 15–17: Unified Response & Model Binding"]
+        L18["Lab 18: File Upload, Validation & Streaming"]
         L19["Lab 19: API Versioning (v1 / v2)"]
         L20_21["Lab 20–21: FluentValidation Pipeline"]
-        L11_3 --> L15_17 --> L18 --> L19 --> L20_21
+        L15_17 --> L18 --> L19 --> L20_21
     end
 
     subgraph Phase5["Phase 5: Security & Enterprise Architecture"]
-        L22_24["Lab 22–24: JWT Auth, RBAC & Refresh Token Rotation"]
-        L25_26["Lab 25–26: Clean Architecture, Repository & Unit of Work"]
-        L20_21 --> L22_24 --> L25_26
+        L22_24["Lab 22–24: JWT Auth, RBAC & Token Rotation"]
+        L25_26["Lab 25–26: Clean Architecture & Unit of Work"]
+        L22_24 --> L25_26
     end
+
+    L06 --> L07
+    L10 --> L11_1
+    L11_3 --> L15_17
+    L20_21 --> L22_24
 ```
 
 ---
 
-## Lab Directory & Practical Index
+## 📂 Lab Directory & Practical Index
 
-| Lab No. | Project Folder | Project Type | Key Technologies & Topics Covered |
+> [!NOTE]
+> All project paths below are relative links designed for smooth navigation directly within GitHub.
+
+| Lab No. | Project Directory | Project Type | Key Technologies & Topics Covered |
 |:---:|:---|:---:|:---|
-| **01** | [`Lab_01 Application Design`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_01%20Application%20Design) | Prototype / Web | AI-assisted utility design, client-side watermark generator, UI/UX architecture. |
-| **02** | [`Lab_02 Loops, Strings & Arrays in C#`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_02%20Loops,%20Strings%20&%20Arrays%20in%20C%23) | Console (.NET 10) | C# 13/14 syntax, control flow, array processing, string algorithms. |
-| **03** | [`Lab_03 OOP`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_03%20OOP) | Console (.NET 10) | Classes, objects, parameterized constructors, encapsulation (`Cube`, `Employee`, `Patient`, `PremiumCar`). |
-| **04** | [`Lab_04 Inheritance, Abstraction and Interface`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_04%20Inheritance,%20Abstraction%20and%20Interface) | Console (.NET 10) | Polymorphism, abstract classes, interfaces (`Doctor`, `Billing`, `IPatient`). |
-| **05** | [`Lab_05 Exception Handling`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_05%20Exception%20Handling) | Console (.NET 10) | Custom domain exceptions, `try-catch-finally`, error propagation, `BankingSystem`. |
-| **06** | [`Lab_06 Collection Classes`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_06%20Collection%20Classes) | Console (.NET 10) | Generic collections (`List<T>`, `Dictionary<K,V>`, `HashSet<T>`, `Queue<T>`, `Stack<T>`). |
-| **07** | [`Lab_07 Student_API`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_07%20Student_API) | Web API (.NET 10) | Controller routing, HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`), Scalar OpenAPI UI. |
-| **08** | [`Lab_08 StudentSubjectAPI_With_HTTP Status Codes`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_08%20StudentSubjectAPI_With_HTTP%20Status%20Codes) | Web API (.NET 10) | RESTful response semantics: `200 OK`, `201 Created`, `204 NoContent`, `400 BadRequest`, `404 NotFound`. |
-| **09** | [`Lab_09 Web API With Migration`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_09%20Web%20API%20With%20Migration) | Web API (.NET 10) | Entity Framework Core 10, Code-First migrations, `DbContext`, SQL Server connection pooling. |
-| **10** | [`Lab_10 EFCore CRUD`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_10%20EFCore%20CRUD) | Web API (.NET 10) | Relational database CRUD, async EF Core (`SaveChangesAsync`), Dashboard KPI aggregation. |
-| **11 (P1)** | [`Lab_11 LINQ Part 1`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_11%20LINQ%20Part%201) | Console (.NET 10) | LINQ filtering (`Where`), projections (`Select`), sorting (`OrderBy`), pagination (`Skip`, `Take`). |
-| **11 (P2)** | [`Lab_11 LINQ Part 2`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_11%20LINQ%20Part%202) | Console (.NET 10) | LINQ grouping (`GroupBy`), aggregate operations (`Count`, `Sum`, `Average`, `Min`, `Max`). |
-| **11 (P3)** | [`Lab_11 LINQ Part 3_Join`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_11%20LINQ%20Part%203_Join) | Console (.NET 10) | Relational LINQ joins: Inner Join, Group Join, Cross Join, and Left Outer Join. |
-| **15–17** | [`Lab_15_17_API_Fundamentals`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_15_17_API_Fundamentals) | Web API (.NET 10) | Standardized `ApiResponse<T>` envelope, Route Constraints, Model Binding (`[FromRoute]`, `[FromQuery]`, `[FromBody]`, `[FromHeader]`, `[FromForm]`). |
-| **18** | [`Lab_18_File_Handling`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_18_File_Handling) | Web API (.NET 10) | File upload validation (extensions, MIME, size), streaming downloads, dynamic storage management. |
-| **19** | [`Lab_19_API_Versioning`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_19_API_Versioning) | Web API (.NET 10) | `Asp.Versioning.Mvc`, URI path versioning (`/api/v{version}/...`), Header & Query versioning, v1/v2 controller routing. |
-| **20–21** | [`Lab_20_21_Validation`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_20_21_Validation) | Web API (.NET 10) | `FluentValidation.AspNetCore`, automatic model validation filters, structured error payloads. |
-| **22–24** | [`Lab_22_24_Security`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_22_24_Security) | Web API (.NET 10) | JWT Bearer authentication, claims-based authorization, Role-Based Access Control (`Admin`, `Manager`, `User`), Refresh Token Rotation. |
-| **25–26** | [`Lab_25_26_Architecture`](file:///d:/CSE%20Sem-5%20(A-A2)%20Subject/(ASP.NET)%20ASP.NET%20Core/ASP.NET%20Core%20Lab%20Solution/Lab_25_26_Architecture) | Web API (.NET 10) | Clean Architecture, Generic Repository pattern (`IRepository<T>`), Unit of Work (`IUnitOfWork`), Service Layer (`IProductService`), DTO separation. |
+| **01** | [`Lab_01 Application Design`](./Lab_01%20Application%20Design) | Web Prototype | Client-side watermark generator, UI/UX architecture, Canvas API. |
+| **02** | [`Lab_02 Loops, Strings & Arrays in C#`](./Lab_02%20Loops,%20Strings%20%26%20Arrays%20in%20C%23) | Console (.NET 10) | C# 13/14 syntax, control flow, array processing, string algorithms. |
+| **03** | [`Lab_03 OOP`](./Lab_03%20OOP) | Console (.NET 10) | Classes, objects, parameterized constructors, encapsulation (`Cube`, `Employee`, `Patient`, `PremiumCar`). |
+| **04** | [`Lab_04 Inheritance, Abstraction and Interface`](./Lab_04%20Inheritance,%20Abstraction%20and%20Interface) | Console (.NET 10) | Polymorphism, abstract classes, interfaces (`Doctor`, `Billing`, `IPatient`). |
+| **05** | [`Lab_05 Exception Handling`](./Lab_05%20Exception%20Handling) | Console (.NET 10) | Custom domain exceptions, `try-catch-finally`, error propagation, `BankingSystem`. |
+| **06** | [`Lab_06 Collection Classes`](./Lab_06%20Collection%20Classes) | Console (.NET 10) | Generic collections (`List<T>`, `Dictionary<K,V>`, `HashSet<T>`, `Queue<T>`, `Stack<T>`). |
+| **07** | [`Lab_07 Student_API`](./Lab_07%20Student_API) | Web API (.NET 10) | Controller routing, HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`), Scalar OpenAPI UI. |
+| **08** | [`Lab_08 StudentSubjectAPI_With_HTTP Status Codes`](./Lab_08%20StudentSubjectAPI_With_HTTP%20Status%20Codes) | Web API (.NET 10) | RESTful response semantics: `200 OK`, `201 Created`, `204 NoContent`, `400 BadRequest`, `404 NotFound`. |
+| **09** | [`Lab_09 Web API With Migration`](./Lab_09%20Web%20API%20With%20Migration) | Web API (.NET 10) | Entity Framework Core 10, Code-First migrations, `DbContext`, SQL Server connection pooling. |
+| **10** | [`Lab_10 EFCore CRUD`](./Lab_10%20EFCore%20CRUD) | Web API (.NET 10) | Relational database CRUD, async EF Core (`SaveChangesAsync`), Dashboard KPI aggregation. |
+| **11 (P1)** | [`Lab_11 LINQ Part 1`](./Lab_11%20LINQ%20Part%201) | Console (.NET 10) | LINQ filtering (`Where`), projections (`Select`), sorting (`OrderBy`), pagination (`Skip`, `Take`). |
+| **11 (P2)** | [`Lab_11 LINQ Part 2`](./Lab_11%20LINQ%20Part%202) | Console (.NET 10) | LINQ grouping (`GroupBy`), aggregate operations (`Count`, `Sum`, `Average`, `Min`, `Max`). |
+| **11 (P3)** | [`Lab_11 LINQ Part 3_Join`](./Lab_11%20LINQ%20Part%203_Join) | Console (.NET 10) | Relational LINQ joins: Inner Join, Group Join, Cross Join, and Left Outer Join. |
+| **15–17** | [`Lab_15_17_API_Fundamentals`](./Lab_15_17_API_Fundamentals) | Web API (.NET 10) | Standardized `ApiResponse<T>` envelope, Route Constraints, Model Binding (`[FromRoute]`, `[FromQuery]`, `[FromBody]`, `[FromHeader]`, `[FromForm]`). |
+| **18** | [`Lab_18_File_Handling`](./Lab_18_File_Handling) | Web API (.NET 10) | File upload validation (extensions, MIME, size), streaming downloads, dynamic storage management. |
+| **19** | [`Lab_19_API_Versioning`](./Lab_19_API_Versioning) | Web API (.NET 10) | `Asp.Versioning.Mvc`, URI path versioning (`/api/v{version}/...`), Header & Query versioning, v1/v2 controller routing. |
+| **20–21** | [`Lab_20_21_Validation`](./Lab_20_21_Validation) | Web API (.NET 10) | `FluentValidation.AspNetCore`, automatic model validation filters, structured error payloads. |
+| **22–24** | [`Lab_22_24_Security`](./Lab_22_24_Security) | Web API (.NET 10) | JWT Bearer authentication, claims-based authorization, Role-Based Access Control (`Admin`, `Manager`, `User`), Refresh Token Rotation. |
+| **25–26** | [`Lab_25_26_Architecture`](./Lab_25_26_Architecture) | Web API (.NET 10) | Clean Architecture, Generic Repository pattern (`IRepository<T>`), Unit of Work (`IUnitOfWork`), Service Layer (`IProductService`), DTO separation. |
 
 ---
 
-## Module Highlights
+## 💡 Module Highlights
 
 ### 1. C# & Object-Oriented Engineering (Labs 01–06)
-- **Object Modeling & Encapsulation**: Complete implementation of domain classes featuring automatic and expression-bodied properties, custom constructors, and data encapsulation.
-- **Polymorphism & Abstraction**: Implementation of medical clinic models (`Doctor`, `Billing`, `Patient`) showcasing interface contracts, abstract base classes, and virtual method overriding.
+- **Object Modeling & Encapsulation**: Domain classes with automatic and expression-bodied properties, custom constructors, and data encapsulation.
+- **Polymorphism & Abstraction**: Implementation of medical clinic models (`Doctor`, `Billing`, `Patient`) demonstrating interface contracts, abstract base classes, and virtual method overriding.
 - **Domain Exception Handling**: Custom business exception hierarchies (`InsufficientFundsException`, `InvalidTransactionException`) ensuring predictable execution flow without application crashes.
-- **High-Performance Collections**: Practical applications of `Dictionary<TKey, TValue>` for O(1) lookups, `HashSet<T>` for unique permission sets, and `Stack<T>`/`Queue<T>` for order-processing workflows.
+- **High-Performance Collections**: Practical applications of `Dictionary<TKey, TValue>` for $O(1)$ lookups, `HashSet<T>` for unique permission sets, and `Stack<T>`/`Queue<T>` for order-processing workflows.
 
 ### 2. RESTful API Foundations & EF Core (Labs 07–10)
 - **RESTful Resource Design**: Proper endpoint semantics adhering to Richardson Maturity Model standards.
@@ -130,7 +146,7 @@ flowchart TD
 ### 3. Language Integrated Query - LINQ (Lab 11: Parts 1–3)
 - **Declarative Query Syntax vs. Method Chains**: Comprehensive side-by-side implementations.
 - **Partitioning & Projections**: `Skip`, `Take`, `Select`, and anonymous type projections.
-- **Relational Operations**: Mastered inner joins, group joins, left outer joins using `DefaultIfEmpty()`, and cross joins.
+- **Relational Operations**: Inner joins, group joins, left outer joins using `DefaultIfEmpty()`, and cross joins.
 
 ### 4. Advanced Web API Engineering (Labs 15–21)
 - **Unified API Response Envelope**: Consistent response contracts across all endpoints:
@@ -146,11 +162,11 @@ flowchart TD
 - **Parameter & Model Binding**: Advanced parameter extraction across `[FromRoute]`, `[FromQuery]`, `[FromHeader]`, `[FromBody]`, and `[FromForm]`.
 - **Industrial File Handling**: Multi-file streaming, extension whitelist enforcement (`.pdf`, `.jpg`, `.png`), MIME-type validation, and download endpoints returning `FileStreamResult` with appropriate `Content-Disposition`.
 - **API Versioning**: Seamless multi-version support (`v1.0` vs. `v2.0`) using `Asp.Versioning.Mvc` and `Asp.Versioning.Mvc.ApiExplorer`.
-- **FluentValidation Pipeline**: Clean separation of validation logic from controllers and models with field-specific RFC-7807 error messages.
+- **FluentValidation Pipeline**: Clean separation of validation logic from controllers and models with field-specific error messages.
 
 ### 5. Enterprise Security & Architecture (Labs 22–26)
 - **JSON Web Token (JWT) Authentication**:
-  - Secure claims generation (UserId, Email, Roles).
+  - Secure claims generation (`UserId`, `Email`, `Roles`).
   - HMAC-SHA256 signature verification.
   - Token expiration and clock-skew tuning.
 - **Refresh Token Rotation**: Prevention of replay attacks by issuing single-use refresh tokens stored with database timestamps and revocation flags.
@@ -162,7 +178,7 @@ flowchart TD
 
 ---
 
-## Cross-Cutting Patterns
+## 🏛️ Cross-Cutting Patterns
 
 ### Standardized API Response Envelope (`ApiResponse<T>`)
 
@@ -187,6 +203,7 @@ public class ApiResponse<T>
 
 ```mermaid
 classDiagram
+    direction TB
     class ProductsController {
         -IProductService _service
         +Get()
@@ -202,10 +219,10 @@ classDiagram
     }
     class IUnitOfWork {
         <<interface>>
-        +IRepository~Product~ Products
+        +IRepository Products
         +SaveChangesAsync()
     }
-    class IRepository~T~ {
+    class IRepository {
         <<interface>>
         +GetByIdAsync(id)
         +GetAllAsync()
@@ -213,14 +230,14 @@ classDiagram
         +Delete(entity)
     }
     class ApplicationDbContext {
-        +DbSet~Product~ Products
+        +DbSet Products
     }
 
     ProductsController --> IProductService : depends on
     ProductService ..|> IProductService : implements
     ProductService --> IUnitOfWork : depends on
-    IUnitOfWork --> IRepository~T~ : provides
-    IRepository~T~ --> ApplicationDbContext : queries
+    IUnitOfWork --> IRepository : provides
+    IRepository --> ApplicationDbContext : queries
 ```
 
 ### JWT Authentication & Refresh Token Rotation Flow
@@ -237,7 +254,7 @@ sequenceDiagram
     AuthAPI-->>Client: Returns JWT Access Token + Refresh Token (Cookie/Body)
     
     Note over Client,AuthAPI: Subsequent Authorized Requests
-    Client->>AuthAPI: GET /api/admin/dashboard (Header: Bearer <JWT>)
+    Client->>AuthAPI: GET /api/admin/dashboard (Header: Bearer Token)
     AuthAPI-->>Client: 200 OK (Authorized Response)
     
     Note over Client,AuthAPI: Token Expiration & Refresh Flow
@@ -248,7 +265,7 @@ sequenceDiagram
 
 ---
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 - **Platform & Runtime**: [.NET 10.0 (net10.0)](https://dotnet.microsoft.com/)
 - **Programming Language**: [C# 13 / 14](https://learn.microsoft.com/en-us/dotnet/csharp/)
@@ -270,7 +287,7 @@ sequenceDiagram
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -329,7 +346,7 @@ https://localhost:<port>/scalar/v1
 
 ---
 
-## Build Quality & Verification
+## ✅ Build Quality & Verification
 
 Every project in this repository has been rigorously audited and compiles with:
 - **0 Compilation Errors**
@@ -347,7 +364,7 @@ Build Summary:
 
 ---
 
-## Author & Acknowledgments
+## 👤 Author & Acknowledgments
 
 - **Author**: Bhavik Parmar
 - **GitHub**: [@Bhaviik-5202](https://github.com/Bhaviik-5202)
